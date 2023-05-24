@@ -15,7 +15,7 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "Secret": "Amazon####",
-        "DefaultConnection": "Server=.;Database=BD_Ama-zon;user=sa;password=Bufete2018",
+        "DefaultConnection": "Server=.;Database=BD_Ama-zon;user=amazon_user;password=@Bad-115",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MarketingWebApi.Data;
 using MarketingWebApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using AmazonApi.Models;
 
 namespace MarketingWebApi.Controllers
 {
@@ -14,28 +14,28 @@ namespace MarketingWebApi.Controllers
     [ApiController]
     //[Authorize]
     
-    public class ModulsController : ControllerBase
+    public class ModulesController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly BD_AmazonContext _context;
 
-        public ModulsController(ApplicationDbContext context)
+        public ModulesController(BD_AmazonContext context)
         {
             _context = context;
         }
 
-        // GET: api/Moduls
+        // GET: api/Modules
         [AllowAnonymous]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Moduls>>> GetModuls()
+        public async Task<ActionResult<IEnumerable<Modules>>> GetModuls()
         {
-            return await _context.Moduls.Include(t=> t.Items).ToListAsync();
+            return await _context.Modules.Include(t=> t.Items).ToListAsync();
         }
 
-        // GET: api/Moduls/5
+        // GET: api/Modules/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Moduls>> GetModuls(int id)
+        public async Task<ActionResult<Modules>> GetModuls(int id)
         {
-            var moduls = await _context.Moduls.FindAsync(id);
+            var moduls = await _context.Modules.FindAsync(id);
 
             if (moduls == null)
             {
@@ -50,7 +50,7 @@ namespace MarketingWebApi.Controllers
         public async Task<ActionResult<IEnumerable<Object>>> GetModulsByRolId(int rolid)
         {
 
-            var values = await _context.Moduls
+            var values = await _context.Modules
                         .Join(_context.Items
                         .Join(_context.RolsItems
                         .Where(x => x.RolId == rolid),
@@ -58,13 +58,13 @@ namespace MarketingWebApi.Controllers
                         RolsItems => RolsItems.ItemId,
                         (Items, RolsItems) => Items)
                         ,
-                        Moduls => Moduls.ModulId,
+                        Modules => Modules.ModulId,
                         Items => Items.ModulId,
-                        (Moduls, Items) => new
+                        (Modules, Items) => new
                         {
-                            ModulIdG = Moduls.ModulId,
-                            TextG = Moduls.ModulName,
-                            IconG = Moduls.Icon,
+                            ModulIdG = Modules.ModulId,
+                            TextG = Modules.ModulName,
+                            IconG = Modules.Icon,
                             ItemsG = Items
                         }
                         )
@@ -81,10 +81,10 @@ namespace MarketingWebApi.Controllers
                 .ToList();
         }
 
-        // PUT: api/Moduls/5
+        // PUT: api/Modules/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutModuls(int id, Moduls moduls)
+        public async Task<IActionResult> PutModuls(int id, Modules moduls)
         {
             if (id != moduls.ModulId)
             {
@@ -112,28 +112,28 @@ namespace MarketingWebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Moduls
+        // POST: api/Modules
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Moduls>> PostModuls(Moduls moduls)
+        public async Task<ActionResult<Modules>> PostModuls(Modules moduls)
         {
-            _context.Moduls.Add(moduls);
+            _context.Modules.Add(moduls);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetModuls", new { id = moduls.ModulId }, moduls);
         }
 
-        // DELETE: api/Moduls/5
+        // DELETE: api/Modules/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteModuls(int id)
         {
-            var moduls = await _context.Moduls.FindAsync(id);
+            var moduls = await _context.Modules.FindAsync(id);
             if (moduls == null)
             {
                 return NotFound();
             }
 
-            _context.Moduls.Remove(moduls);
+            _context.Modules.Remove(moduls);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -141,7 +141,7 @@ namespace MarketingWebApi.Controllers
 
         private bool ModulsExists(int id)
         {
-            return _context.Moduls.Any(e => e.ModulId == id);
+            return _context.Modules.Any(e => e.ModulId == id);
         }
     }
 }

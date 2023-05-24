@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MarketingWebApi.Data;
 using MarketingWebApi.Models;
 using Microsoft.Data.SqlClient;
+using AmazonApi.Models;
 
 namespace MarketingWebApi.Controllers
 {
@@ -15,9 +15,9 @@ namespace MarketingWebApi.Controllers
     [ApiController]
     public class ItemsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly BD_AmazonContext _context;
 
-        public ItemsController(ApplicationDbContext context)
+        public ItemsController(BD_AmazonContext context)
         {
             _context = context;
         }

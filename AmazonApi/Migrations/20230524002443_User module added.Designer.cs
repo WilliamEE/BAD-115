@@ -4,14 +4,16 @@ using AmazonApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AmazonApi.Migrations
 {
     [DbContext(typeof(BD_AmazonContext))]
-    partial class BD_AmazonContextModelSnapshot : ModelSnapshot
+    [Migration("20230524002443_User module added")]
+    partial class Usermoduleadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -466,7 +468,7 @@ namespace AmazonApi.Migrations
                     b.ToTable("Items");
                 });
 
-            modelBuilder.Entity("MarketingWebApi.Models.Modules", b =>
+            modelBuilder.Entity("MarketingWebApi.Models.Moduls", b =>
                 {
                     b.Property<int>("ModulId")
                         .ValueGeneratedOnAdd()
@@ -483,7 +485,7 @@ namespace AmazonApi.Migrations
 
                     b.HasKey("ModulId");
 
-                    b.ToTable("Modules");
+                    b.ToTable("Moduls");
                 });
 
             modelBuilder.Entity("MarketingWebApi.Models.Rols", b =>
@@ -739,7 +741,7 @@ namespace AmazonApi.Migrations
 
             modelBuilder.Entity("MarketingWebApi.Models.Items", b =>
                 {
-                    b.HasOne("MarketingWebApi.Models.Modules", "Moduls")
+                    b.HasOne("MarketingWebApi.Models.Moduls", "Moduls")
                         .WithMany("Items")
                         .HasForeignKey("ModulId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -859,7 +861,7 @@ namespace AmazonApi.Migrations
                     b.Navigation("UserItems");
                 });
 
-            modelBuilder.Entity("MarketingWebApi.Models.Modules", b =>
+            modelBuilder.Entity("MarketingWebApi.Models.Moduls", b =>
                 {
                     b.Navigation("Items");
                 });

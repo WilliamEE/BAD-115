@@ -7,22 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\Utilities\**" />
-    <Content Remove="Models\Utilities\**" />
-    <EmbeddedResource Remove="Models\Utilities\**" />
-    <None Remove="Models\Utilities\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Controllers\ItemsController.cs" />
-    <Compile Remove="Controllers\ModulsController.cs" />
-    <Compile Remove="Controllers\RolsController.cs" />
-    <Compile Remove="Controllers\RolsItemsController.cs" />
     <Compile Remove="Controllers\UserAccessesController.cs" />
-    <Compile Remove="Controllers\UserItemsController.cs" />
     <Compile Remove="Controllers\UserModulsController.cs" />
-    <Compile Remove="Controllers\UsersAuthController.cs" />
-    <Compile Remove="Controllers\UsersController.cs" />
     <Compile Remove="Data\ApplicationDbContext.cs" />
     <Compile Remove="Models\ArticleAuthors.cs" />
     <Compile Remove="Models\ArticleBibliographics.cs" />
@@ -43,7 +29,6 @@
     <Compile Remove="Models\HomeInformation.cs" />
     <Compile Remove="Models\HomeInformationCounters.cs" />
     <Compile Remove="Models\Icons.cs" />
-    <Compile Remove="Models\Items.cs" />
     <Compile Remove="Models\Languages.cs" />
     <Compile Remove="Models\LawyerAcademicInfos.cs" />
     <Compile Remove="Models\LawyerCategories.cs" />
@@ -55,7 +40,6 @@
     <Compile Remove="Models\LawyerRecognitions.cs" />
     <Compile Remove="Models\Lawyers.cs" />
     <Compile Remove="Models\Memberships.cs" />
-    <Compile Remove="Models\Moduls.cs" />
     <Compile Remove="Models\Months.cs" />
     <Compile Remove="Models\Newsletters.cs" />
     <Compile Remove="Models\Offices.cs" />
@@ -68,13 +52,9 @@
     <Compile Remove="Models\PracticeAreas.cs" />
     <Compile Remove="Models\Rankings.cs" />
     <Compile Remove="Models\Recognitions.cs" />
-    <Compile Remove="Models\Rols.cs" />
-    <Compile Remove="Models\RolsItems.cs" />
     <Compile Remove="Models\Sustainabilities.cs" />
     <Compile Remove="Models\UserAccess.cs" />
-    <Compile Remove="Models\UserItems.cs" />
     <Compile Remove="Models\UserModuls.cs" />
-    <Compile Remove="Models\Users.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -92,10 +72,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.2" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

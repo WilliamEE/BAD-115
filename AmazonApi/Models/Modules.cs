@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace MarketingWebApi.Models
 {
-    public class ArticleCategories
+    public class Modules
     {
         [Key]
-        public int ArticleCategoryId { get; set; }
+        public int ModulId { get; set; }
         [MaxLength(50)]
-        public string CategoryName { get; set; }
+        public string ModulName { get; set; }
         [MaxLength(50)]
-        public string CategoryNameEn { get; set; }
-        public int Visible { get; set; }
+        public string Icon { get; set; }
+        public virtual ICollection<Items> Items { get; set; }
+
     }
 }

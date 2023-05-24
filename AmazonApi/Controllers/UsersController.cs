@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MarketingWebApi.Data;
 using MarketingWebApi.Models;
-using MarketingWebApi.Utilities;
+using AmazonApi.Models;
 
 namespace MarketingWebApi.Controllers
 {
@@ -15,9 +14,9 @@ namespace MarketingWebApi.Controllers
     //[Authorize]
     public class UsersController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly BD_AmazonContext _context;
 
-        public UsersController(ApplicationDbContext context)
+        public UsersController(BD_AmazonContext context)
         {
             _context = context;
         }
@@ -26,7 +25,6 @@ namespace MarketingWebApi.Controllers
         public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
         {
             var applicationDbContext = _context.Users.
-                Include(u => u.Offices).
                 Include(u => u.Rols)
                 .Include(t => t.UserItems)
                 .ThenInclude(t => t.Items);
@@ -39,7 +37,6 @@ namespace MarketingWebApi.Controllers
         public async Task<ActionResult<IEnumerable<Users>>> GetUsersByOfficeId(int officeid)
         {
             var applicationDbContext = _context.Users
-                .Include(u => u.Offices)
                 .Include(u => u.Rols)
                 .Where(x=> x.OfficeId == officeid);
             return await applicationDbContext.ToListAsync();
@@ -51,7 +48,6 @@ namespace MarketingWebApi.Controllers
         public async Task<ActionResult<IEnumerable<Users>>> GetUsersByCompanyId(int CompanyId)
         {
             var applicationDbContext = _context.Users
-                .Include(u => u.Offices)
                 .Include(u => u.Rols);
             return await applicationDbContext.ToListAsync();
         }
@@ -62,7 +58,6 @@ namespace MarketingWebApi.Controllers
         {
 
             var users = await _context.Users
-            .Include(u => u.Offices)
             .Include(u => u.Rols)
             .FirstOrDefaultAsync(m => m.UserId == id && m.OfficeId == officeid);
 

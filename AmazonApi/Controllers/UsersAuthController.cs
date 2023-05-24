@@ -1,5 +1,6 @@
-﻿using MarketingWebApi.Data;
-using MarketingWebApi.Utilities;
+﻿using AmazonApi.Models;
+using AmazonApi.Models.Utilities;
+using AmazonApi.Utilities;
 using MarketingWebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MarketingWebApi.Models.Utilities;
 
 namespace MarketingWebApi.Controllers
 {
@@ -16,9 +16,9 @@ namespace MarketingWebApi.Controllers
     [ApiController]
     public class UsersAuthController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly BD_AmazonContext _context;
         private IUserService _userService;
-        public UsersAuthController(IUserService userService, ApplicationDbContext context)
+        public UsersAuthController(IUserService userService, BD_AmazonContext context)
         {
             _userService = userService;
             _context = context;

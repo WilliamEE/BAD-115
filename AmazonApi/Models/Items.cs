@@ -18,7 +18,7 @@ namespace MarketingWebApi.Models
         public string ItemLink { get; set; }
         public int ModulId { get; set; }
         [ForeignKey("ModulId")]
-        public virtual Moduls Moduls { get; set; }
+        public virtual Modules Moduls { get; set; }
         public virtual ICollection<RolsItems> RolsItems { get; set; }
         public virtual ICollection<UserItems> UserItems { get; set; }
     }

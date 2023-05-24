@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MarketingWebApi.Data;
 using MarketingWebApi.Models;
+using AmazonApi.Models;
 
 namespace MarketingWebApi.Controllers
 {
@@ -14,9 +14,9 @@ namespace MarketingWebApi.Controllers
     [ApiController]
     public class UserItemsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly BD_AmazonContext _context;
 
-        public UserItemsController(ApplicationDbContext context)
+        public UserItemsController(BD_AmazonContext context)
         {
             _context = context;
         }
