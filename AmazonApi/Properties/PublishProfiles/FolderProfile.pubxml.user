@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Abner.Lopez\Documents\RepositoriosGit\Publicaciones\PagewebPublish\Api</_PublishTargetUrl>
+    <History>True|2023-05-19T21:10:31.3006728Z;True|2023-05-18T15:37:54.5563087-06:00;True|2023-05-18T11:58:34.5414839-06:00;True|2023-05-18T09:06:56.5507516-06:00;True|2023-05-18T09:05:37.6821632-06:00;True|2023-05-18T08:58:03.0355909-06:00;True|2023-05-17T19:10:37.9425955-06:00;True|2023-05-17T16:13:22.1942265-06:00;True|2023-05-17T16:03:44.1270014-06:00;True|2023-05-17T16:02:23.2935188-06:00;True|2023-05-17T16:01:19.1521902-06:00;True|2023-05-16T15:43:41.1880193-06:00;True|2023-05-16T15:42:17.6078103-06:00;True|2023-05-16T04:02:29.5690149-06:00;True|2023-05-16T03:57:41.7759777-06:00;True|2023-05-16T03:50:14.8595099-06:00;True|2023-05-16T02:53:37.4109569-06:00;</History>
+  </PropertyGroup>
+</Project>
