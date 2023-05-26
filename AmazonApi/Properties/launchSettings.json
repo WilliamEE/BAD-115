@@ -14,7 +14,7 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "Secret": "Amazon####",
+        "Secret": "Amazon####App####2023",
         "DefaultConnection": "Server=.;Database=BD_Ama-zon;user=amazon_user;password=@Bad-115",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

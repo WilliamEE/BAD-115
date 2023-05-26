@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -20,6 +21,8 @@ namespace AmazonApi.Models
         public string ObservacionesAdicionales { get; set; }
 
         public virtual Cliente Cliente { get; set; }
+        [ForeignKey("EstadoPedidoId")]
+        public virtual EstadoPedido EstadoPedido { get; set; }
         public virtual ICollection<Despacho> Despachos { get; set; }
         public virtual ICollection<DetallePedido> DetallePedidos { get; set; }
     }

@@ -4,14 +4,16 @@ using AmazonApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AmazonApi.Migrations
 {
     [DbContext(typeof(BD_AmazonContext))]
-    partial class BD_AmazonContextModelSnapshot : ModelSnapshot
+    [Migration("20230524005349_Fixing model pedido")]
+    partial class Fixingmodelpedido
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
