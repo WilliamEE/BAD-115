@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
 namespace AmazonApi.Models
 {
-    public partial class ProveedoresTransporte
+    public partial class TransporteProveedores
     {
-        public ProveedoresTransporte()
-        {
-            Despachos = new HashSet<Despacho>();
-        }
-
-        public int ProveedorId { get; set; }
+        [Key]
+        public int TransporteProveedorId { get; set; }
         public int PaisId { get; set; }
         public string NombreProveedor { get; set; }
         public string ApellidoProveedor { get; set; }
@@ -21,7 +19,8 @@ namespace AmazonApi.Models
         public string DireccionProveedor { get; set; }
         public bool Visible { get; set; }
 
-        public virtual Paise Pais { get; set; }
-        public virtual ICollection<Despacho> Despachos { get; set; }
+        [ForeignKey("PaisId")]
+        public virtual Paises Pais { get; set; }
+        public virtual ICollection<Despachos> Despachos { get; set; }
     }
 }

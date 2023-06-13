@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
 namespace AmazonApi.Models
 {
-    public partial class Cliente
+    public partial class Clientes
     {
-        public Cliente()
-        {
-            ConfirmacionRecepcions = new HashSet<ConfirmacionRecepcion>();
-            Pedidos = new HashSet<Pedido>();
-        }
-
+        [Key]
         public int ClienteId { get; set; }
         public int PaisId { get; set; }
         public string NombreCliente { get; set; }
@@ -22,8 +19,9 @@ namespace AmazonApi.Models
         public string DireccionCliente { get; set; }
         public bool Visible { get; set; }
 
-        public virtual Paise Pais { get; set; }
-        public virtual ICollection<ConfirmacionRecepcion> ConfirmacionRecepcions { get; set; }
-        public virtual ICollection<Pedido> Pedidos { get; set; }
+        [ForeignKey("PaisId")]
+        public virtual Paises Pais { get; set; }
+        public virtual ICollection<Recepciones> Recepciones { get; set; }
+        public virtual ICollection<Pedidos> Pedidos { get; set; }
     }
 }
