@@ -22,36 +22,36 @@ namespace AmazonApi.Controllers
 
         // GET: api/Paises
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Paise>>> GetPaises()
+        public async Task<ActionResult<IEnumerable<Paises>>> GetPaises()
         {
             return await _context.Paises.ToListAsync();
         }
 
         // GET: api/Paises/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Paise>> GetPaise(int id)
+        public async Task<ActionResult<Paises>> GetPaises(int id)
         {
-            var paise = await _context.Paises.FindAsync(id);
+            var paises = await _context.Paises.FindAsync(id);
 
-            if (paise == null)
+            if (paises == null)
             {
                 return NotFound();
             }
 
-            return paise;
+            return paises;
         }
 
         // PUT: api/Paises/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPaise(int id, Paise paise)
+        public async Task<IActionResult> PutPaises(int id, Paises pais)
         {
-            if (id != paise.PaisId)
+            if (id != pais.PaisId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(paise).State = EntityState.Modified;
+            _context.Entry(pais).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace AmazonApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PaiseExists(id))
+                if (!PaisesExists(id))
                 {
                     return NotFound();
                 }
@@ -75,16 +75,16 @@ namespace AmazonApi.Controllers
         // POST: api/Paises
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Paise>> PostPaise(Paise paise)
+        public async Task<ActionResult<Paises>> PostPaises(Paises pais)
         {
-            _context.Paises.Add(paise);
+            _context.Paises.Add(pais);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (PaiseExists(paise.PaisId))
+                if (PaisesExists(pais.PaisId))
                 {
                     return Conflict();
                 }
@@ -94,26 +94,26 @@ namespace AmazonApi.Controllers
                 }
             }
 
-            return CreatedAtAction("GetPaise", new { id = paise.PaisId }, paise);
+            return CreatedAtAction("GetPais", new { id = pais.PaisId }, pais);
         }
 
         // DELETE: api/Paises/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePaise(int id)
+        public async Task<IActionResult> DeletePaises(int id)
         {
-            var paise = await _context.Paises.FindAsync(id);
-            if (paise == null)
+            var paises = await _context.Paises.FindAsync(id);
+            if (paises == null)
             {
                 return NotFound();
             }
 
-            _context.Paises.Remove(paise);
+            _context.Paises.Remove(paises);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PaiseExists(int id)
+        private bool PaisesExists(int id)
         {
             return _context.Paises.Any(e => e.PaisId == id);
         }
