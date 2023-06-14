@@ -94,7 +94,7 @@ namespace AmazonApi.Controllers
                 }
             }
 
-            return CreatedAtAction("GetPais", new { id = pais.PaisId }, pais);
+            return CreatedAtAction("GetPaises", new { id = pais.PaisId }, pais);
         }
 
         // DELETE: api/Paises/5

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\CentrosDistribucionesController.cs" />
-    <Compile Remove="Controllers\PaisesController.cs" />
     <Compile Remove="Controllers\UserAccessesController.cs" />
     <Compile Remove="Controllers\UserModulsController.cs" />
     <Compile Remove="Data\ApplicationDbContext.cs" />
