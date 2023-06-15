@@ -40,7 +40,6 @@ namespace AmazonApi.Utilities
                 userResponse.UserEmail = usuario.UserEmail;
                 userResponse.UserName = usuario.UserName;
                 userResponse.UserId = usuario.UserId;
-                userResponse.OfficeId = usuario.OfficeId;
                 userResponse.UserUser = usuario.UserUser;
                 userResponse.RolId = usuario.RolId;
 
