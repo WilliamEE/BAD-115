@@ -19,9 +19,6 @@ namespace MarketingWebApi.Models
         public string UserEmail { get; set; }
         public string UserUser { get; set; }
         public string UserPassword { get; set; }
-        public int OfficeId { get; set; }
-        //[ForeignKey("OfficeId")]
-        //public virtual Offices Offices { get; set; }
         public int RolId { get; set; }
         [ForeignKey("RolId")]
         public virtual Rols Rols { get; set; }

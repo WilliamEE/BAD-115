@@ -37,8 +37,7 @@ namespace MarketingWebApi.Controllers
         public async Task<ActionResult<IEnumerable<Users>>> GetUsersByOfficeId(int officeid)
         {
             var applicationDbContext = _context.Users
-                .Include(u => u.Rols)
-                .Where(x=> x.OfficeId == officeid);
+                .Include(u => u.Rols);
             return await applicationDbContext.ToListAsync();
         }
 
@@ -59,7 +58,7 @@ namespace MarketingWebApi.Controllers
 
             var users = await _context.Users
             .Include(u => u.Rols)
-            .FirstOrDefaultAsync(m => m.UserId == id && m.OfficeId == officeid);
+            .FirstOrDefaultAsync(m => m.UserId == id);
 
             if (users == null)
             {
