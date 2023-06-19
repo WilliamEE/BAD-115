@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-
-#nullable disable
+using System.ComponentModel.DataAnnotations;
 
 namespace AmazonApi.Models
 {
-    public partial class Pedidos
+    public class PedidoFinal
     {
         [Key]
         public int PedidoId { get; set; }
@@ -15,6 +12,16 @@ namespace AmazonApi.Models
         public int ClienteId { get; set; }
         public string DireccionEntrega { get; set; }
         public string ObservacionesAdicionales { get; set; }
+
+        [Key]
+        public int PedidoDetalleId { get; set; }
+        public int ProductoId { get; set; }
+        public int Cantidad { get; set; }
+
+        [ForeignKey("PedidoId")]
+        public virtual Pedidos Pedido { get; set; }
+        [ForeignKey("ProductoId")]
+        public virtual Productos Producto { get; set; }
 
 
         [ForeignKey("ClienteId")]

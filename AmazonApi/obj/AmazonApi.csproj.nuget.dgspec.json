@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\William.Rosales\\OneDrive - Bufete Dr. F.A. Arias, S.A. de C.V\\Documents\\UES\\BAD-115\\AmazonApi\\AmazonApi\\AmazonApi.csproj": {}
+    "C:\\Users\\jferh\\Documents\\GitHub\\BAD-115-Backend\\AmazonApi\\AmazonApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\William.Rosales\\OneDrive - Bufete Dr. F.A. Arias, S.A. de C.V\\Documents\\UES\\BAD-115\\AmazonApi\\AmazonApi\\AmazonApi.csproj": {
+    "C:\\Users\\jferh\\Documents\\GitHub\\BAD-115-Backend\\AmazonApi\\AmazonApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\William.Rosales\\OneDrive - Bufete Dr. F.A. Arias, S.A. de C.V\\Documents\\UES\\BAD-115\\AmazonApi\\AmazonApi\\AmazonApi.csproj",
+        "projectUniqueName": "C:\\Users\\jferh\\Documents\\GitHub\\BAD-115-Backend\\AmazonApi\\AmazonApi.csproj",
         "projectName": "AmazonApi",
-        "projectPath": "C:\\Users\\William.Rosales\\OneDrive - Bufete Dr. F.A. Arias, S.A. de C.V\\Documents\\UES\\BAD-115\\AmazonApi\\AmazonApi\\AmazonApi.csproj",
-        "packagesPath": "C:\\Users\\William.Rosales\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\William.Rosales\\OneDrive - Bufete Dr. F.A. Arias, S.A. de C.V\\Documents\\UES\\BAD-115\\AmazonApi\\AmazonApi\\obj\\",
+        "projectPath": "C:\\Users\\jferh\\Documents\\GitHub\\BAD-115-Backend\\AmazonApi\\AmazonApi.csproj",
+        "packagesPath": "C:\\Users\\jferh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jferh\\Documents\\GitHub\\BAD-115-Backend\\AmazonApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\William.Rosales\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jferh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,7 +97,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -105,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
